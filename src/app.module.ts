@@ -21,7 +21,6 @@ import { BrandModule } from './brand/brand.module';
 import { LevelModule } from './level/level.module';
 import { ContactModule } from './contact/contact.module';
 import { CapacityModule } from './capacity/capacity.module';
-import { CommonModule } from './common/common.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AdminModule } from './admin/admin.module';
 import { UploadModule } from './upload/upload.module';
@@ -52,7 +51,6 @@ import { TelegramBotModule } from './telegram-bot/telegram-bot.module';
     LevelModule,
     ContactModule,
     CapacityModule,
-    CommonModule,
     PrismaModule,
     TelegramBotModule,
     AdminModule,

@@ -1,0 +1,412 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  SUPER_ADMIN
+  VIEWER_ADMIN
+  USER_FIZ
+  USER_YUR
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  BANNED
+}
+
+enum PaymentType {
+  CASH
+  CLICK
+  PAYME
+}
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  REJECTED
+}
+
+enum TimeUnit {
+  HOURLY
+  DAILY
+}
+
+model Region {
+  id        String   @id @default(uuid())
+  nameUz    String
+  nameRu    String?
+  nameEn    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  users     User[]
+}
+
+model User {
+  id           String     @id @default(uuid())
+  firstName    String
+  lastName     String
+  phoneNumber  String     @unique
+  password     String
+  regionId     String?
+  status       UserStatus @default(INACTIVE)
+  role         UserRole   @default(USER_FIZ)
+  refreshToken String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  region    Region?   @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  sessions  Session[]
+  companies Company[]
+  order     Order[]
+  contact   Contact[]
+  basket    Basket[]
+  comment   Comment[]
+}
+
+model Company {
+  id          String   @id @default(uuid())
+  nameUz      String
+  nameRu      String?
+  nameEn      String?
+  taxId       String?
+  bankCode    String?
+  bankAccount String?
+  bankName    String?
+  oked        String?
+  address     String?
+  ownerId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+}
+
+model Session {
+  id            String   @id @default(uuid())
+  userId        String
+  ip            String?
+  userAgent     String?
+  device        String?
+  brand         String?
+  model         String?
+  os            String?
+  osVersion     String?
+  client        String?
+  clientType    String?
+  clientVersion String?
+  isBot         Boolean?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Brand {
+  id        String   @id @default(uuid())
+  nameUz    String
+  nameRu    String?
+  nameEn    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tools     Tool[]
+}
+
+model Size {
+  id        String   @id @default(uuid())
+  nameUz    String
+  nameRu    String?
+  nameEn    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tools     Tool[]
+}
+
+model Power {
+  id        String   @id @default(uuid())
+  nameUz    String
+  nameRu    String?
+  nameEn    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tools     Tool[]
+}
+
+model Tool {
+  id            String   @id @default(uuid())
+  nameUz        String
+  nameRu        String?
+  nameEn        String?
+  descriptionUz String
+  descriptionRu String?
+  descriptionEn String?
+  price         Decimal
+  quantity      Int
+  code          String   @unique
+  brandId       String?
+  powerId       String?
+  sizeId        String?
+  img           String
+  isAvailable   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  brand           Brand?           @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  power           Power?           @relation(fields: [powerId], references: [id], onDelete: SetNull)
+  size            Size?            @relation(fields: [sizeId], references: [id], onDelete: SetNull)
+  professionTools ProfessionTool[]
+  orderProducts   OrderProduct[]
+  basket          Basket[]
+}
+
+model Master {
+  id                String             @id @default(uuid())
+  firstName         String
+  lastName          String
+  phoneNumber       String
+  isActive          Boolean            @default(true)
+  birthYear         Int
+  img               String
+  passportImg       String
+  about             String
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  masterProfessions MasterProfession[]
+  ordermasters      OrderMaster[]
+  masterRating      MasterRatings[]
+}
+
+model MasterProfession {
+  id              String      @id @default(uuid())
+  professionId    String?
+  minWorkingHours Int?
+  levelId         String?
+  priceHourly     Decimal
+  priceDaily      Decimal
+  experience      Float
+  masterId        String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  profession      Profession? @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  level           Level?      @relation(fields: [levelId], references: [id], onDelete: SetNull)
+  master          Master?     @relation(fields: [masterId], references: [id], onDelete: Cascade)
+}
+
+model Level {
+  id                String             @id @default(uuid())
+  nameUz            String
+  nameRu            String?
+  nameEn            String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  masterProfessions MasterProfession[]
+  professionLevels  ProfessionLevel[]
+  orderProductLevel OrderProduct[]
+  basket            Basket[]
+}
+
+model Profession {
+  id                String             @id @default(uuid())
+  nameUz            String
+  nameRu            String?
+  nameEn            String?
+  img               String
+  isActive          Boolean            @default(true)
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  masterProfessions MasterProfession[]
+  professionLevels  ProfessionLevel[]
+  professionTools   ProfessionTool[]
+  orderProducts     OrderProduct[]
+  basket            Basket[]
+}
+
+model ProfessionLevel {
+  id              String     @id @default(uuid())
+  professionId    String
+  levelId         String
+  minWorkingHours Int
+  priceHourly     Decimal
+  priceDaily      Decimal
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  profession      Profession @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  level           Level      @relation(fields: [levelId], references: [id], onDelete: Cascade)
+}
+
+model ProfessionTool {
+  id           String     @id @default(uuid())
+  professionId String
+  toolId       String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  profession   Profession @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  tool         Tool       @relation(fields: [toolId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id              String         @id @default(uuid())
+  ownerId         String
+  address         String
+  latitude        String
+  longitude       String
+  date            DateTime
+  totalPrice      Decimal
+  isPaid          Boolean        @default(false)
+  paymentType     PaymentType    @default(CASH)
+  withDelivery    Boolean
+  status          OrderStatus    @default(PENDING)
+  deliveryComment String
+  orderProducts   OrderProduct[]
+  comments        Comment[]
+  masters         OrderMaster[]
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  owner           User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+}
+
+model OrderProduct {
+  id           String      @id @default(uuid())
+  orderId      String
+  professionId String?
+  toolId       String?
+  levelId      String?
+  quantity     Int         @default(1)
+  timeUnit     TimeUnit?
+  workingTime  Float?
+  price        Decimal
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  order        Order       @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  profession   Profession? @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  tool         Tool?       @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  level        Level?      @relation(fields: [levelId], references: [id], onDelete: SetNull)
+}
+
+model OrderMaster {
+  id       String @id @default(uuid())
+  orderId  String
+  masterid String
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  master   Master @relation(fields: [masterid], references: [id], onDelete: Cascade)
+}
+
+model Basket {
+  id           String      @id @default(uuid())
+  ownerId      String
+  professionId String?
+  toolId       String?
+  levelId      String?
+  quantity     Int         @default(1)
+  timeUnit     TimeUnit?
+  workingTime  Float?
+  price        Decimal
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  owner        User        @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  profession   Profession? @relation(fields: [professionId], references: [id], onDelete: Cascade)
+  tool         Tool?       @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  level        Level?      @relation(fields: [levelId], references: [id], onDelete: SetNull)
+}
+
+model Comment {
+  id            String          @id @default(uuid())
+  message       String
+  userId        String
+  orderId       String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  user          User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  order         Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  MasterRatings MasterRatings[]
+}
+
+model MasterRatings {
+  id        String  @id @default(uuid())
+  star      Float
+  masterId  String
+  commentId String
+  Master    Master  @relation(fields: [masterId], references: [id], onDelete: Cascade)
+  Comment   Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+}
+
+model Contact {
+  id          String   @id @default(uuid())
+  firstName   String
+  lastName    String
+  phoneNumber String
+  address     String
+  message     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model FAQ {
+  id         String   @id @default(uuid())
+  questionUz String
+  questionRu String?
+  questionEn String?
+  answerUz   String
+  answerRu   String?
+  answerEn   String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Showcase {
+  id            String   @id @default(uuid())
+  nameUz        String
+  nameRu        String?
+  nameEn        String?
+  descriptionUz String
+  descriptionRu String?
+  descriptionEn String?
+  image         String
+  link          String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Partner {
+  id        String   @id @default(uuid())
+  nameUz    String
+  nameRu    String?
+  nameEn    String?
+  image     String
+  link      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteMetadata {
+  id              String   @id @default(uuid())
+  aboutUz         String
+  aboutRu         String?
+  aboutEn         String?
+  privacyPolicyUz String
+  privacyPolicyRu String?
+  privacyPolicyEn String?
+  email           String
+  phoneNumber     String
+  socialMedia     Json
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
