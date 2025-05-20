@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class CreateRegionDto {
   @ApiProperty({
     description: 'Name of the region in Uzbek',
-    example: 'Toshkent',
+    example: 'DENOV',
     required: false,
   })
   @IsNotEmpty({ message: 'nameUz is required' })
@@ -16,7 +16,7 @@ export class CreateRegionDto {
 
   @ApiProperty({
     description: 'Name of the region in Russian',
-    example: 'Ташкент',
+    example: 'ДЕНОВ',
     required: false,
   })
   @IsOptional()
@@ -28,7 +28,7 @@ export class CreateRegionDto {
 
   @ApiProperty({
     description: 'Name of the region in English',
-    example: 'Tashkent',
+    example: 'DENAU',
     required: false,
   })
   @IsOptional()

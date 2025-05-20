@@ -80,14 +80,6 @@ export class AuthController {
     return this.authService.refreshToken(tokenDto);
   }
 
-  @Post('logout')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({ summary: 'Logout and remove refresh token and session from user' })
-  logout(@Req() req: Request) {
-    return this.authService.logout(req);
-  }
 
   @Get('me')
   @UseGuards(JwtAuthGuard)
@@ -96,16 +88,6 @@ export class AuthController {
   @ApiOperation({ summary: 'Get authenticated user info' })
   me(@Req() req: Request) {
     return this.authService.me(req);
-  }
-
-  @Delete('logout-all')
-  @UseGuards(JwtAuthGuard)
-  @HttpCode(HttpStatus.OK)
-  @ApiBearerAuth()
-  @ApiOperation({ summary: 'Logout from all devices (delete all sessions)' })
-  async logoutAll(@Req() req: Request) {
-    const user = req['user']; 
-    return this.authService.logoutAll(user);
   }
   
 
