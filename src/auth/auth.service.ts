@@ -114,7 +114,7 @@ export class AuthService {
         newData['company'] = newCompany;
       }
   
-      // await this.eskizService.sendSMS(otp, phoneNumber);
+      await this.eskizService.sendSMS(otp, phoneNumber);
   
       return {
         otp, 
@@ -212,7 +212,7 @@ export class AuthService {
       }
   
       const otp = totp.generate(this.OTP_SECRET + phoneNumber);
-      // await this.eskizService.sendSMS(otp, phoneNumber)
+      await this.eskizService.sendSMS(otp, phoneNumber)
   
       return {
         otp,

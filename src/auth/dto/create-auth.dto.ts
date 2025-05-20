@@ -73,7 +73,7 @@ export class RegisterDTO {
   })
   firstName: string;
 
-  @ApiProperty({ example: "O'Connor" })
+  @ApiProperty({ example: "O'ASIl" })
   @IsString()
   @IsNotEmpty()
   @MinLength(2)
@@ -106,19 +106,19 @@ export class RegisterDTO {
   @IsNotEmpty()
   regionId: string;
 
-  @ApiProperty({ example: 'INDIVIDUAL', enum: ['INDIVIDUAL', 'COMPANY'] })
+  @ApiProperty({ example: 'USER_FIZ', enum: ['USER_FIZ', 'USER_YUR'] })
   @IsString()
   @IsNotEmpty()
-  role: 'INDIVIDUAL' | 'COMPANY';
+  role: 'USER_FIZ' | 'USER_YUR';
 
   @ApiProperty({
     type: CreateCompanyDto,
     required: false,
-    description: 'Company details (required if role is COMPANY)',
+    description: 'Company details (required if role is USER_YUR)',
   })
   @Type(() => CreateCompanyDto)
   @ValidateNested()
-  @ValidateIf((dto) => dto.role === 'COMPANY') 
+  @ValidateIf((dto) => dto.role === 'USER_YUR') 
   @IsNotEmpty({ message: 'Company details are required for COMPANY role' })
   company?: CreateCompanyDto;
 

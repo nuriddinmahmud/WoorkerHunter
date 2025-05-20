@@ -28,7 +28,7 @@ export class AddAdminDto {
   })
   firstName: string;
 
-  @ApiProperty({ example: "O'Connor" })
+  @ApiProperty({ example: "Khodjakov" })
   @IsString()
   @IsNotEmpty()
   @MinLength(2)
