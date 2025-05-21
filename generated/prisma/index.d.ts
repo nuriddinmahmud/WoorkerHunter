@@ -44,10 +44,10 @@ export type Brand = $Result.DefaultSelection<Prisma.$BrandPayload>
  */
 export type Size = $Result.DefaultSelection<Prisma.$SizePayload>
 /**
- * Model Power
+ * Model Capacity
  * 
  */
-export type Power = $Result.DefaultSelection<Prisma.$PowerPayload>
+export type Capacity = $Result.DefaultSelection<Prisma.$CapacityPayload>
 /**
  * Model Tool
  * 
@@ -399,14 +399,14 @@ export class PrismaClient<
   get size(): Prisma.SizeDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.power`: Exposes CRUD operations for the **Power** model.
+   * `prisma.capacity`: Exposes CRUD operations for the **Capacity** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Powers
-    * const powers = await prisma.power.findMany()
+    * // Fetch zero or more Capacities
+    * const capacities = await prisma.capacity.findMany()
     * ```
     */
-  get power(): Prisma.PowerDelegate<ExtArgs, ClientOptions>;
+  get capacity(): Prisma.CapacityDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.tool`: Exposes CRUD operations for the **Tool** model.
@@ -1033,7 +1033,7 @@ export namespace Prisma {
     Session: 'Session',
     Brand: 'Brand',
     Size: 'Size',
-    Power: 'Power',
+    Capacity: 'Capacity',
     Tool: 'Tool',
     Master: 'Master',
     MasterProfession: 'MasterProfession',
@@ -1070,7 +1070,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "region" | "user" | "company" | "session" | "brand" | "size" | "power" | "tool" | "master" | "masterProfession" | "level" | "profession" | "professionLevel" | "professionTool" | "order" | "orderProduct" | "orderMaster" | "basket" | "comment" | "masterRatings" | "contact" | "fAQ" | "showcase" | "partner" | "siteMetadata"
+      modelProps: "region" | "user" | "company" | "session" | "brand" | "size" | "capacity" | "tool" | "master" | "masterProfession" | "level" | "profession" | "professionLevel" | "professionTool" | "order" | "orderProduct" | "orderMaster" | "basket" | "comment" | "masterRatings" | "contact" | "fAQ" | "showcase" | "partner" | "siteMetadata"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1518,77 +1518,77 @@ export namespace Prisma {
           }
         }
       }
-      Power: {
-        payload: Prisma.$PowerPayload<ExtArgs>
-        fields: Prisma.PowerFieldRefs
+      Capacity: {
+        payload: Prisma.$CapacityPayload<ExtArgs>
+        fields: Prisma.CapacityFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PowerFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload> | null
+            args: Prisma.CapacityFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PowerFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           findFirst: {
-            args: Prisma.PowerFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload> | null
+            args: Prisma.CapacityFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PowerFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           findMany: {
-            args: Prisma.PowerFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>[]
+            args: Prisma.CapacityFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>[]
           }
           create: {
-            args: Prisma.PowerCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           createMany: {
-            args: Prisma.PowerCreateManyArgs<ExtArgs>
+            args: Prisma.CapacityCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PowerCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>[]
+            args: Prisma.CapacityCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>[]
           }
           delete: {
-            args: Prisma.PowerDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           update: {
-            args: Prisma.PowerUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           deleteMany: {
-            args: Prisma.PowerDeleteManyArgs<ExtArgs>
+            args: Prisma.CapacityDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PowerUpdateManyArgs<ExtArgs>
+            args: Prisma.CapacityUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.PowerUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>[]
+            args: Prisma.CapacityUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>[]
           }
           upsert: {
-            args: Prisma.PowerUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PowerPayload>
+            args: Prisma.CapacityUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CapacityPayload>
           }
           aggregate: {
-            args: Prisma.PowerAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePower>
+            args: Prisma.CapacityAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCapacity>
           }
           groupBy: {
-            args: Prisma.PowerGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PowerGroupByOutputType>[]
+            args: Prisma.CapacityGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CapacityGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PowerCountArgs<ExtArgs>
-            result: $Utils.Optional<PowerCountAggregateOutputType> | number
+            args: Prisma.CapacityCountArgs<ExtArgs>
+            result: $Utils.Optional<CapacityCountAggregateOutputType> | number
           }
         }
       }
@@ -3014,7 +3014,7 @@ export namespace Prisma {
     session?: SessionOmit
     brand?: BrandOmit
     size?: SizeOmit
-    power?: PowerOmit
+    capacity?: CapacityOmit
     tool?: ToolOmit
     master?: MasterOmit
     masterProfession?: MasterProfessionOmit
@@ -3292,32 +3292,32 @@ export namespace Prisma {
 
 
   /**
-   * Count Type PowerCountOutputType
+   * Count Type CapacityCountOutputType
    */
 
-  export type PowerCountOutputType = {
+  export type CapacityCountOutputType = {
     tools: number
   }
 
-  export type PowerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tools?: boolean | PowerCountOutputTypeCountToolsArgs
+  export type CapacityCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tools?: boolean | CapacityCountOutputTypeCountToolsArgs
   }
 
   // Custom InputTypes
   /**
-   * PowerCountOutputType without action
+   * CapacityCountOutputType without action
    */
-  export type PowerCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the PowerCountOutputType
+     * Select specific fields to fetch from the CapacityCountOutputType
      */
-    select?: PowerCountOutputTypeSelect<ExtArgs> | null
+    select?: CapacityCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * PowerCountOutputType without action
+   * CapacityCountOutputType without action
    */
-  export type PowerCountOutputTypeCountToolsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityCountOutputTypeCountToolsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ToolWhereInput
   }
 
@@ -10554,16 +10554,16 @@ export namespace Prisma {
 
 
   /**
-   * Model Power
+   * Model Capacity
    */
 
-  export type AggregatePower = {
-    _count: PowerCountAggregateOutputType | null
-    _min: PowerMinAggregateOutputType | null
-    _max: PowerMaxAggregateOutputType | null
+  export type AggregateCapacity = {
+    _count: CapacityCountAggregateOutputType | null
+    _min: CapacityMinAggregateOutputType | null
+    _max: CapacityMaxAggregateOutputType | null
   }
 
-  export type PowerMinAggregateOutputType = {
+  export type CapacityMinAggregateOutputType = {
     id: string | null
     nameUz: string | null
     nameRu: string | null
@@ -10572,7 +10572,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type PowerMaxAggregateOutputType = {
+  export type CapacityMaxAggregateOutputType = {
     id: string | null
     nameUz: string | null
     nameRu: string | null
@@ -10581,7 +10581,7 @@ export namespace Prisma {
     updatedAt: Date | null
   }
 
-  export type PowerCountAggregateOutputType = {
+  export type CapacityCountAggregateOutputType = {
     id: number
     nameUz: number
     nameRu: number
@@ -10592,7 +10592,7 @@ export namespace Prisma {
   }
 
 
-  export type PowerMinAggregateInputType = {
+  export type CapacityMinAggregateInputType = {
     id?: true
     nameUz?: true
     nameRu?: true
@@ -10601,7 +10601,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type PowerMaxAggregateInputType = {
+  export type CapacityMaxAggregateInputType = {
     id?: true
     nameUz?: true
     nameRu?: true
@@ -10610,7 +10610,7 @@ export namespace Prisma {
     updatedAt?: true
   }
 
-  export type PowerCountAggregateInputType = {
+  export type CapacityCountAggregateInputType = {
     id?: true
     nameUz?: true
     nameRu?: true
@@ -10620,134 +10620,134 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type PowerAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Power to aggregate.
+     * Filter which Capacity to aggregate.
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Powers to fetch.
+     * Determine the order of Capacities to fetch.
      */
-    orderBy?: PowerOrderByWithRelationInput | PowerOrderByWithRelationInput[]
+    orderBy?: CapacityOrderByWithRelationInput | CapacityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PowerWhereUniqueInput
+    cursor?: CapacityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Powers from the position of the cursor.
+     * Take `±n` Capacities from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Powers.
+     * Skip the first `n` Capacities.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Powers
+     * Count returned Capacities
     **/
-    _count?: true | PowerCountAggregateInputType
+    _count?: true | CapacityCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PowerMinAggregateInputType
+    _min?: CapacityMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PowerMaxAggregateInputType
+    _max?: CapacityMaxAggregateInputType
   }
 
-  export type GetPowerAggregateType<T extends PowerAggregateArgs> = {
-        [P in keyof T & keyof AggregatePower]: P extends '_count' | 'count'
+  export type GetCapacityAggregateType<T extends CapacityAggregateArgs> = {
+        [P in keyof T & keyof AggregateCapacity]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePower[P]>
-      : GetScalarType<T[P], AggregatePower[P]>
+        : GetScalarType<T[P], AggregateCapacity[P]>
+      : GetScalarType<T[P], AggregateCapacity[P]>
   }
 
 
 
 
-  export type PowerGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PowerWhereInput
-    orderBy?: PowerOrderByWithAggregationInput | PowerOrderByWithAggregationInput[]
-    by: PowerScalarFieldEnum[] | PowerScalarFieldEnum
-    having?: PowerScalarWhereWithAggregatesInput
+  export type CapacityGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CapacityWhereInput
+    orderBy?: CapacityOrderByWithAggregationInput | CapacityOrderByWithAggregationInput[]
+    by: CapacityScalarFieldEnum[] | CapacityScalarFieldEnum
+    having?: CapacityScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PowerCountAggregateInputType | true
-    _min?: PowerMinAggregateInputType
-    _max?: PowerMaxAggregateInputType
+    _count?: CapacityCountAggregateInputType | true
+    _min?: CapacityMinAggregateInputType
+    _max?: CapacityMaxAggregateInputType
   }
 
-  export type PowerGroupByOutputType = {
+  export type CapacityGroupByOutputType = {
     id: string
     nameUz: string
     nameRu: string | null
     nameEn: string | null
     createdAt: Date
     updatedAt: Date
-    _count: PowerCountAggregateOutputType | null
-    _min: PowerMinAggregateOutputType | null
-    _max: PowerMaxAggregateOutputType | null
+    _count: CapacityCountAggregateOutputType | null
+    _min: CapacityMinAggregateOutputType | null
+    _max: CapacityMaxAggregateOutputType | null
   }
 
-  type GetPowerGroupByPayload<T extends PowerGroupByArgs> = Prisma.PrismaPromise<
+  type GetCapacityGroupByPayload<T extends CapacityGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PowerGroupByOutputType, T['by']> &
+      PickEnumerable<CapacityGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PowerGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof CapacityGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PowerGroupByOutputType[P]>
-            : GetScalarType<T[P], PowerGroupByOutputType[P]>
+              : GetScalarType<T[P], CapacityGroupByOutputType[P]>
+            : GetScalarType<T[P], CapacityGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PowerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CapacitySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nameUz?: boolean
     nameRu?: boolean
     nameEn?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    tools?: boolean | Power$toolsArgs<ExtArgs>
-    _count?: boolean | PowerCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["power"]>
+    tools?: boolean | Capacity$toolsArgs<ExtArgs>
+    _count?: boolean | CapacityCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["capacity"]>
 
-  export type PowerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CapacitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nameUz?: boolean
     nameRu?: boolean
     nameEn?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["power"]>
+  }, ExtArgs["result"]["capacity"]>
 
-  export type PowerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CapacitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nameUz?: boolean
     nameRu?: boolean
     nameEn?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["power"]>
+  }, ExtArgs["result"]["capacity"]>
 
-  export type PowerSelectScalar = {
+  export type CapacitySelectScalar = {
     id?: boolean
     nameUz?: boolean
     nameRu?: boolean
@@ -10756,16 +10756,16 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type PowerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nameUz" | "nameRu" | "nameEn" | "createdAt" | "updatedAt", ExtArgs["result"]["power"]>
-  export type PowerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tools?: boolean | Power$toolsArgs<ExtArgs>
-    _count?: boolean | PowerCountOutputTypeDefaultArgs<ExtArgs>
+  export type CapacityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nameUz" | "nameRu" | "nameEn" | "createdAt" | "updatedAt", ExtArgs["result"]["capacity"]>
+  export type CapacityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tools?: boolean | Capacity$toolsArgs<ExtArgs>
+    _count?: boolean | CapacityCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type PowerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type PowerIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CapacityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CapacityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
-  export type $PowerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Power"
+  export type $CapacityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Capacity"
     objects: {
       tools: Prisma.$ToolPayload<ExtArgs>[]
     }
@@ -10776,136 +10776,136 @@ export namespace Prisma {
       nameEn: string | null
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["power"]>
+    }, ExtArgs["result"]["capacity"]>
     composites: {}
   }
 
-  type PowerGetPayload<S extends boolean | null | undefined | PowerDefaultArgs> = $Result.GetResult<Prisma.$PowerPayload, S>
+  type CapacityGetPayload<S extends boolean | null | undefined | CapacityDefaultArgs> = $Result.GetResult<Prisma.$CapacityPayload, S>
 
-  type PowerCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PowerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PowerCountAggregateInputType | true
+  type CapacityCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CapacityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CapacityCountAggregateInputType | true
     }
 
-  export interface PowerDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Power'], meta: { name: 'Power' } }
+  export interface CapacityDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Capacity'], meta: { name: 'Capacity' } }
     /**
-     * Find zero or one Power that matches the filter.
-     * @param {PowerFindUniqueArgs} args - Arguments to find a Power
+     * Find zero or one Capacity that matches the filter.
+     * @param {CapacityFindUniqueArgs} args - Arguments to find a Capacity
      * @example
-     * // Get one Power
-     * const power = await prisma.power.findUnique({
+     * // Get one Capacity
+     * const capacity = await prisma.capacity.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PowerFindUniqueArgs>(args: SelectSubset<T, PowerFindUniqueArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends CapacityFindUniqueArgs>(args: SelectSubset<T, CapacityFindUniqueArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Power that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Capacity that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PowerFindUniqueOrThrowArgs} args - Arguments to find a Power
+     * @param {CapacityFindUniqueOrThrowArgs} args - Arguments to find a Capacity
      * @example
-     * // Get one Power
-     * const power = await prisma.power.findUniqueOrThrow({
+     * // Get one Capacity
+     * const capacity = await prisma.capacity.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PowerFindUniqueOrThrowArgs>(args: SelectSubset<T, PowerFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends CapacityFindUniqueOrThrowArgs>(args: SelectSubset<T, CapacityFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Power that matches the filter.
+     * Find the first Capacity that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerFindFirstArgs} args - Arguments to find a Power
+     * @param {CapacityFindFirstArgs} args - Arguments to find a Capacity
      * @example
-     * // Get one Power
-     * const power = await prisma.power.findFirst({
+     * // Get one Capacity
+     * const capacity = await prisma.capacity.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PowerFindFirstArgs>(args?: SelectSubset<T, PowerFindFirstArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends CapacityFindFirstArgs>(args?: SelectSubset<T, CapacityFindFirstArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Power that matches the filter or
+     * Find the first Capacity that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerFindFirstOrThrowArgs} args - Arguments to find a Power
+     * @param {CapacityFindFirstOrThrowArgs} args - Arguments to find a Capacity
      * @example
-     * // Get one Power
-     * const power = await prisma.power.findFirstOrThrow({
+     * // Get one Capacity
+     * const capacity = await prisma.capacity.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PowerFindFirstOrThrowArgs>(args?: SelectSubset<T, PowerFindFirstOrThrowArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends CapacityFindFirstOrThrowArgs>(args?: SelectSubset<T, CapacityFindFirstOrThrowArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Powers that matches the filter.
+     * Find zero or more Capacities that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {CapacityFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Powers
-     * const powers = await prisma.power.findMany()
+     * // Get all Capacities
+     * const capacities = await prisma.capacity.findMany()
      * 
-     * // Get first 10 Powers
-     * const powers = await prisma.power.findMany({ take: 10 })
+     * // Get first 10 Capacities
+     * const capacities = await prisma.capacity.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const powerWithIdOnly = await prisma.power.findMany({ select: { id: true } })
+     * const capacityWithIdOnly = await prisma.capacity.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PowerFindManyArgs>(args?: SelectSubset<T, PowerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends CapacityFindManyArgs>(args?: SelectSubset<T, CapacityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Power.
-     * @param {PowerCreateArgs} args - Arguments to create a Power.
+     * Create a Capacity.
+     * @param {CapacityCreateArgs} args - Arguments to create a Capacity.
      * @example
-     * // Create one Power
-     * const Power = await prisma.power.create({
+     * // Create one Capacity
+     * const Capacity = await prisma.capacity.create({
      *   data: {
-     *     // ... data to create a Power
+     *     // ... data to create a Capacity
      *   }
      * })
      * 
      */
-    create<T extends PowerCreateArgs>(args: SelectSubset<T, PowerCreateArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends CapacityCreateArgs>(args: SelectSubset<T, CapacityCreateArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Powers.
-     * @param {PowerCreateManyArgs} args - Arguments to create many Powers.
+     * Create many Capacities.
+     * @param {CapacityCreateManyArgs} args - Arguments to create many Capacities.
      * @example
-     * // Create many Powers
-     * const power = await prisma.power.createMany({
+     * // Create many Capacities
+     * const capacity = await prisma.capacity.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PowerCreateManyArgs>(args?: SelectSubset<T, PowerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends CapacityCreateManyArgs>(args?: SelectSubset<T, CapacityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Powers and returns the data saved in the database.
-     * @param {PowerCreateManyAndReturnArgs} args - Arguments to create many Powers.
+     * Create many Capacities and returns the data saved in the database.
+     * @param {CapacityCreateManyAndReturnArgs} args - Arguments to create many Capacities.
      * @example
-     * // Create many Powers
-     * const power = await prisma.power.createManyAndReturn({
+     * // Create many Capacities
+     * const capacity = await prisma.capacity.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Powers and only return the `id`
-     * const powerWithIdOnly = await prisma.power.createManyAndReturn({
+     * // Create many Capacities and only return the `id`
+     * const capacityWithIdOnly = await prisma.capacity.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -10915,28 +10915,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PowerCreateManyAndReturnArgs>(args?: SelectSubset<T, PowerCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends CapacityCreateManyAndReturnArgs>(args?: SelectSubset<T, CapacityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Power.
-     * @param {PowerDeleteArgs} args - Arguments to delete one Power.
+     * Delete a Capacity.
+     * @param {CapacityDeleteArgs} args - Arguments to delete one Capacity.
      * @example
-     * // Delete one Power
-     * const Power = await prisma.power.delete({
+     * // Delete one Capacity
+     * const Capacity = await prisma.capacity.delete({
      *   where: {
-     *     // ... filter to delete one Power
+     *     // ... filter to delete one Capacity
      *   }
      * })
      * 
      */
-    delete<T extends PowerDeleteArgs>(args: SelectSubset<T, PowerDeleteArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends CapacityDeleteArgs>(args: SelectSubset<T, CapacityDeleteArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Power.
-     * @param {PowerUpdateArgs} args - Arguments to update one Power.
+     * Update one Capacity.
+     * @param {CapacityUpdateArgs} args - Arguments to update one Capacity.
      * @example
-     * // Update one Power
-     * const power = await prisma.power.update({
+     * // Update one Capacity
+     * const capacity = await prisma.capacity.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -10946,30 +10946,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PowerUpdateArgs>(args: SelectSubset<T, PowerUpdateArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends CapacityUpdateArgs>(args: SelectSubset<T, CapacityUpdateArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Powers.
-     * @param {PowerDeleteManyArgs} args - Arguments to filter Powers to delete.
+     * Delete zero or more Capacities.
+     * @param {CapacityDeleteManyArgs} args - Arguments to filter Capacities to delete.
      * @example
-     * // Delete a few Powers
-     * const { count } = await prisma.power.deleteMany({
+     * // Delete a few Capacities
+     * const { count } = await prisma.capacity.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PowerDeleteManyArgs>(args?: SelectSubset<T, PowerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends CapacityDeleteManyArgs>(args?: SelectSubset<T, CapacityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Powers.
+     * Update zero or more Capacities.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {CapacityUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Powers
-     * const power = await prisma.power.updateMany({
+     * // Update many Capacities
+     * const capacity = await prisma.capacity.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -10979,14 +10979,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PowerUpdateManyArgs>(args: SelectSubset<T, PowerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends CapacityUpdateManyArgs>(args: SelectSubset<T, CapacityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Powers and returns the data updated in the database.
-     * @param {PowerUpdateManyAndReturnArgs} args - Arguments to update many Powers.
+     * Update zero or more Capacities and returns the data updated in the database.
+     * @param {CapacityUpdateManyAndReturnArgs} args - Arguments to update many Capacities.
      * @example
-     * // Update many Powers
-     * const power = await prisma.power.updateManyAndReturn({
+     * // Update many Capacities
+     * const capacity = await prisma.capacity.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -10995,8 +10995,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Powers and only return the `id`
-     * const powerWithIdOnly = await prisma.power.updateManyAndReturn({
+     * // Update zero or more Capacities and only return the `id`
+     * const capacityWithIdOnly = await prisma.capacity.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -11009,56 +11009,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends PowerUpdateManyAndReturnArgs>(args: SelectSubset<T, PowerUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends CapacityUpdateManyAndReturnArgs>(args: SelectSubset<T, CapacityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Power.
-     * @param {PowerUpsertArgs} args - Arguments to update or create a Power.
+     * Create or update one Capacity.
+     * @param {CapacityUpsertArgs} args - Arguments to update or create a Capacity.
      * @example
-     * // Update or create a Power
-     * const power = await prisma.power.upsert({
+     * // Update or create a Capacity
+     * const capacity = await prisma.capacity.upsert({
      *   create: {
-     *     // ... data to create a Power
+     *     // ... data to create a Capacity
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Power we want to update
+     *     // ... the filter for the Capacity we want to update
      *   }
      * })
      */
-    upsert<T extends PowerUpsertArgs>(args: SelectSubset<T, PowerUpsertArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends CapacityUpsertArgs>(args: SelectSubset<T, CapacityUpsertArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Powers.
+     * Count the number of Capacities.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerCountArgs} args - Arguments to filter Powers to count.
+     * @param {CapacityCountArgs} args - Arguments to filter Capacities to count.
      * @example
-     * // Count the number of Powers
-     * const count = await prisma.power.count({
+     * // Count the number of Capacities
+     * const count = await prisma.capacity.count({
      *   where: {
-     *     // ... the filter for the Powers we want to count
+     *     // ... the filter for the Capacities we want to count
      *   }
      * })
     **/
-    count<T extends PowerCountArgs>(
-      args?: Subset<T, PowerCountArgs>,
+    count<T extends CapacityCountArgs>(
+      args?: Subset<T, CapacityCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PowerCountAggregateOutputType>
+          : GetScalarType<T['select'], CapacityCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Power.
+     * Allows you to perform aggregations operations on a Capacity.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {CapacityAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -11078,13 +11078,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PowerAggregateArgs>(args: Subset<T, PowerAggregateArgs>): Prisma.PrismaPromise<GetPowerAggregateType<T>>
+    aggregate<T extends CapacityAggregateArgs>(args: Subset<T, CapacityAggregateArgs>): Prisma.PrismaPromise<GetCapacityAggregateType<T>>
 
     /**
-     * Group by Power.
+     * Group by Capacity.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PowerGroupByArgs} args - Group by arguments.
+     * @param {CapacityGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -11099,14 +11099,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PowerGroupByArgs,
+      T extends CapacityGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PowerGroupByArgs['orderBy'] }
-        : { orderBy?: PowerGroupByArgs['orderBy'] },
+        ? { orderBy: CapacityGroupByArgs['orderBy'] }
+        : { orderBy?: CapacityGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -11155,22 +11155,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PowerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPowerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, CapacityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCapacityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Power model
+   * Fields of the Capacity model
    */
-  readonly fields: PowerFieldRefs;
+  readonly fields: CapacityFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Power.
+   * The delegate class that acts as a "Promise-like" for Capacity.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PowerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__CapacityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    tools<T extends Power$toolsArgs<ExtArgs> = {}>(args?: Subset<T, Power$toolsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToolPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    tools<T extends Capacity$toolsArgs<ExtArgs> = {}>(args?: Subset<T, Capacity$toolsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToolPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11197,406 +11197,406 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Power model
+   * Fields of the Capacity model
    */
-  interface PowerFieldRefs {
-    readonly id: FieldRef<"Power", 'String'>
-    readonly nameUz: FieldRef<"Power", 'String'>
-    readonly nameRu: FieldRef<"Power", 'String'>
-    readonly nameEn: FieldRef<"Power", 'String'>
-    readonly createdAt: FieldRef<"Power", 'DateTime'>
-    readonly updatedAt: FieldRef<"Power", 'DateTime'>
+  interface CapacityFieldRefs {
+    readonly id: FieldRef<"Capacity", 'String'>
+    readonly nameUz: FieldRef<"Capacity", 'String'>
+    readonly nameRu: FieldRef<"Capacity", 'String'>
+    readonly nameEn: FieldRef<"Capacity", 'String'>
+    readonly createdAt: FieldRef<"Capacity", 'DateTime'>
+    readonly updatedAt: FieldRef<"Capacity", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Power findUnique
+   * Capacity findUnique
    */
-  export type PowerFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter, which Power to fetch.
+     * Filter, which Capacity to fetch.
      */
-    where: PowerWhereUniqueInput
+    where: CapacityWhereUniqueInput
   }
 
   /**
-   * Power findUniqueOrThrow
+   * Capacity findUniqueOrThrow
    */
-  export type PowerFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter, which Power to fetch.
+     * Filter, which Capacity to fetch.
      */
-    where: PowerWhereUniqueInput
+    where: CapacityWhereUniqueInput
   }
 
   /**
-   * Power findFirst
+   * Capacity findFirst
    */
-  export type PowerFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter, which Power to fetch.
+     * Filter, which Capacity to fetch.
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Powers to fetch.
+     * Determine the order of Capacities to fetch.
      */
-    orderBy?: PowerOrderByWithRelationInput | PowerOrderByWithRelationInput[]
+    orderBy?: CapacityOrderByWithRelationInput | CapacityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Powers.
+     * Sets the position for searching for Capacities.
      */
-    cursor?: PowerWhereUniqueInput
+    cursor?: CapacityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Powers from the position of the cursor.
+     * Take `±n` Capacities from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Powers.
+     * Skip the first `n` Capacities.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Powers.
+     * Filter by unique combinations of Capacities.
      */
-    distinct?: PowerScalarFieldEnum | PowerScalarFieldEnum[]
+    distinct?: CapacityScalarFieldEnum | CapacityScalarFieldEnum[]
   }
 
   /**
-   * Power findFirstOrThrow
+   * Capacity findFirstOrThrow
    */
-  export type PowerFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter, which Power to fetch.
+     * Filter, which Capacity to fetch.
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Powers to fetch.
+     * Determine the order of Capacities to fetch.
      */
-    orderBy?: PowerOrderByWithRelationInput | PowerOrderByWithRelationInput[]
+    orderBy?: CapacityOrderByWithRelationInput | CapacityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Powers.
+     * Sets the position for searching for Capacities.
      */
-    cursor?: PowerWhereUniqueInput
+    cursor?: CapacityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Powers from the position of the cursor.
+     * Take `±n` Capacities from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Powers.
+     * Skip the first `n` Capacities.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Powers.
+     * Filter by unique combinations of Capacities.
      */
-    distinct?: PowerScalarFieldEnum | PowerScalarFieldEnum[]
+    distinct?: CapacityScalarFieldEnum | CapacityScalarFieldEnum[]
   }
 
   /**
-   * Power findMany
+   * Capacity findMany
    */
-  export type PowerFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter, which Powers to fetch.
+     * Filter, which Capacities to fetch.
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Powers to fetch.
+     * Determine the order of Capacities to fetch.
      */
-    orderBy?: PowerOrderByWithRelationInput | PowerOrderByWithRelationInput[]
+    orderBy?: CapacityOrderByWithRelationInput | CapacityOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Powers.
+     * Sets the position for listing Capacities.
      */
-    cursor?: PowerWhereUniqueInput
+    cursor?: CapacityWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Powers from the position of the cursor.
+     * Take `±n` Capacities from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Powers.
+     * Skip the first `n` Capacities.
      */
     skip?: number
-    distinct?: PowerScalarFieldEnum | PowerScalarFieldEnum[]
+    distinct?: CapacityScalarFieldEnum | CapacityScalarFieldEnum[]
   }
 
   /**
-   * Power create
+   * Capacity create
    */
-  export type PowerCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * The data needed to create a Power.
+     * The data needed to create a Capacity.
      */
-    data: XOR<PowerCreateInput, PowerUncheckedCreateInput>
+    data: XOR<CapacityCreateInput, CapacityUncheckedCreateInput>
   }
 
   /**
-   * Power createMany
+   * Capacity createMany
    */
-  export type PowerCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Powers.
+     * The data used to create many Capacities.
      */
-    data: PowerCreateManyInput | PowerCreateManyInput[]
+    data: CapacityCreateManyInput | CapacityCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Power createManyAndReturn
+   * Capacity createManyAndReturn
    */
-  export type PowerCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelectCreateManyAndReturn<ExtArgs> | null
+    select?: CapacitySelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
-     * The data used to create many Powers.
+     * The data used to create many Capacities.
      */
-    data: PowerCreateManyInput | PowerCreateManyInput[]
+    data: CapacityCreateManyInput | CapacityCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Power update
+   * Capacity update
    */
-  export type PowerUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * The data needed to update a Power.
+     * The data needed to update a Capacity.
      */
-    data: XOR<PowerUpdateInput, PowerUncheckedUpdateInput>
+    data: XOR<CapacityUpdateInput, CapacityUncheckedUpdateInput>
     /**
-     * Choose, which Power to update.
+     * Choose, which Capacity to update.
      */
-    where: PowerWhereUniqueInput
+    where: CapacityWhereUniqueInput
   }
 
   /**
-   * Power updateMany
+   * Capacity updateMany
    */
-  export type PowerUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Powers.
+     * The data used to update Capacities.
      */
-    data: XOR<PowerUpdateManyMutationInput, PowerUncheckedUpdateManyInput>
+    data: XOR<CapacityUpdateManyMutationInput, CapacityUncheckedUpdateManyInput>
     /**
-     * Filter which Powers to update
+     * Filter which Capacities to update
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
-     * Limit how many Powers to update.
+     * Limit how many Capacities to update.
      */
     limit?: number
   }
 
   /**
-   * Power updateManyAndReturn
+   * Capacity updateManyAndReturn
    */
-  export type PowerUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: CapacitySelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
-     * The data used to update Powers.
+     * The data used to update Capacities.
      */
-    data: XOR<PowerUpdateManyMutationInput, PowerUncheckedUpdateManyInput>
+    data: XOR<CapacityUpdateManyMutationInput, CapacityUncheckedUpdateManyInput>
     /**
-     * Filter which Powers to update
+     * Filter which Capacities to update
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
-     * Limit how many Powers to update.
+     * Limit how many Capacities to update.
      */
     limit?: number
   }
 
   /**
-   * Power upsert
+   * Capacity upsert
    */
-  export type PowerUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * The filter to search for the Power to update in case it exists.
+     * The filter to search for the Capacity to update in case it exists.
      */
-    where: PowerWhereUniqueInput
+    where: CapacityWhereUniqueInput
     /**
-     * In case the Power found by the `where` argument doesn't exist, create a new Power with this data.
+     * In case the Capacity found by the `where` argument doesn't exist, create a new Capacity with this data.
      */
-    create: XOR<PowerCreateInput, PowerUncheckedCreateInput>
+    create: XOR<CapacityCreateInput, CapacityUncheckedCreateInput>
     /**
-     * In case the Power was found with the provided `where` argument, update it with this data.
+     * In case the Capacity was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PowerUpdateInput, PowerUncheckedUpdateInput>
+    update: XOR<CapacityUpdateInput, CapacityUncheckedUpdateInput>
   }
 
   /**
-   * Power delete
+   * Capacity delete
    */
-  export type PowerDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
     /**
-     * Filter which Power to delete.
+     * Filter which Capacity to delete.
      */
-    where: PowerWhereUniqueInput
+    where: CapacityWhereUniqueInput
   }
 
   /**
-   * Power deleteMany
+   * Capacity deleteMany
    */
-  export type PowerDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Powers to delete
+     * Filter which Capacities to delete
      */
-    where?: PowerWhereInput
+    where?: CapacityWhereInput
     /**
-     * Limit how many Powers to delete.
+     * Limit how many Capacities to delete.
      */
     limit?: number
   }
 
   /**
-   * Power.tools
+   * Capacity.tools
    */
-  export type Power$toolsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Capacity$toolsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Tool
      */
@@ -11618,21 +11618,21 @@ export namespace Prisma {
   }
 
   /**
-   * Power without action
+   * Capacity without action
    */
-  export type PowerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CapacityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
+    include?: CapacityInclude<ExtArgs> | null
   }
 
 
@@ -11670,7 +11670,7 @@ export namespace Prisma {
     quantity: number | null
     code: string | null
     brandId: string | null
-    powerId: string | null
+    capacityId: string | null
     sizeId: string | null
     img: string | null
     isAvailable: boolean | null
@@ -11690,7 +11690,7 @@ export namespace Prisma {
     quantity: number | null
     code: string | null
     brandId: string | null
-    powerId: string | null
+    capacityId: string | null
     sizeId: string | null
     img: string | null
     isAvailable: boolean | null
@@ -11710,7 +11710,7 @@ export namespace Prisma {
     quantity: number
     code: number
     brandId: number
-    powerId: number
+    capacityId: number
     sizeId: number
     img: number
     isAvailable: number
@@ -11742,7 +11742,7 @@ export namespace Prisma {
     quantity?: true
     code?: true
     brandId?: true
-    powerId?: true
+    capacityId?: true
     sizeId?: true
     img?: true
     isAvailable?: true
@@ -11762,7 +11762,7 @@ export namespace Prisma {
     quantity?: true
     code?: true
     brandId?: true
-    powerId?: true
+    capacityId?: true
     sizeId?: true
     img?: true
     isAvailable?: true
@@ -11782,7 +11782,7 @@ export namespace Prisma {
     quantity?: true
     code?: true
     brandId?: true
-    powerId?: true
+    capacityId?: true
     sizeId?: true
     img?: true
     isAvailable?: true
@@ -11889,7 +11889,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId: string | null
-    powerId: string | null
+    capacityId: string | null
     sizeId: string | null
     img: string
     isAvailable: boolean
@@ -11928,14 +11928,14 @@ export namespace Prisma {
     quantity?: boolean
     code?: boolean
     brandId?: boolean
-    powerId?: boolean
+    capacityId?: boolean
     sizeId?: boolean
     img?: boolean
     isAvailable?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
     professionTools?: boolean | Tool$professionToolsArgs<ExtArgs>
     orderProducts?: boolean | Tool$orderProductsArgs<ExtArgs>
@@ -11955,14 +11955,14 @@ export namespace Prisma {
     quantity?: boolean
     code?: boolean
     brandId?: boolean
-    powerId?: boolean
+    capacityId?: boolean
     sizeId?: boolean
     img?: boolean
     isAvailable?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
   }, ExtArgs["result"]["tool"]>
 
@@ -11978,14 +11978,14 @@ export namespace Prisma {
     quantity?: boolean
     code?: boolean
     brandId?: boolean
-    powerId?: boolean
+    capacityId?: boolean
     sizeId?: boolean
     img?: boolean
     isAvailable?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
   }, ExtArgs["result"]["tool"]>
 
@@ -12001,7 +12001,7 @@ export namespace Prisma {
     quantity?: boolean
     code?: boolean
     brandId?: boolean
-    powerId?: boolean
+    capacityId?: boolean
     sizeId?: boolean
     img?: boolean
     isAvailable?: boolean
@@ -12009,10 +12009,10 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ToolOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nameUz" | "nameRu" | "nameEn" | "descriptionUz" | "descriptionRu" | "descriptionEn" | "price" | "quantity" | "code" | "brandId" | "powerId" | "sizeId" | "img" | "isAvailable" | "createdAt" | "updatedAt", ExtArgs["result"]["tool"]>
+  export type ToolOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nameUz" | "nameRu" | "nameEn" | "descriptionUz" | "descriptionRu" | "descriptionEn" | "price" | "quantity" | "code" | "brandId" | "capacityId" | "sizeId" | "img" | "isAvailable" | "createdAt" | "updatedAt", ExtArgs["result"]["tool"]>
   export type ToolInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
     professionTools?: boolean | Tool$professionToolsArgs<ExtArgs>
     orderProducts?: boolean | Tool$orderProductsArgs<ExtArgs>
@@ -12021,12 +12021,12 @@ export namespace Prisma {
   }
   export type ToolIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
   }
   export type ToolIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | Tool$brandArgs<ExtArgs>
-    power?: boolean | Tool$powerArgs<ExtArgs>
+    capacity?: boolean | Tool$capacityArgs<ExtArgs>
     size?: boolean | Tool$sizeArgs<ExtArgs>
   }
 
@@ -12034,7 +12034,7 @@ export namespace Prisma {
     name: "Tool"
     objects: {
       brand: Prisma.$BrandPayload<ExtArgs> | null
-      power: Prisma.$PowerPayload<ExtArgs> | null
+      capacity: Prisma.$CapacityPayload<ExtArgs> | null
       size: Prisma.$SizePayload<ExtArgs> | null
       professionTools: Prisma.$ProfessionToolPayload<ExtArgs>[]
       orderProducts: Prisma.$OrderProductPayload<ExtArgs>[]
@@ -12052,7 +12052,7 @@ export namespace Prisma {
       quantity: number
       code: string
       brandId: string | null
-      powerId: string | null
+      capacityId: string | null
       sizeId: string | null
       img: string
       isAvailable: boolean
@@ -12453,7 +12453,7 @@ export namespace Prisma {
   export interface Prisma__ToolClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     brand<T extends Tool$brandArgs<ExtArgs> = {}>(args?: Subset<T, Tool$brandArgs<ExtArgs>>): Prisma__BrandClient<$Result.GetResult<Prisma.$BrandPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    power<T extends Tool$powerArgs<ExtArgs> = {}>(args?: Subset<T, Tool$powerArgs<ExtArgs>>): Prisma__PowerClient<$Result.GetResult<Prisma.$PowerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    capacity<T extends Tool$capacityArgs<ExtArgs> = {}>(args?: Subset<T, Tool$capacityArgs<ExtArgs>>): Prisma__CapacityClient<$Result.GetResult<Prisma.$CapacityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     size<T extends Tool$sizeArgs<ExtArgs> = {}>(args?: Subset<T, Tool$sizeArgs<ExtArgs>>): Prisma__SizeClient<$Result.GetResult<Prisma.$SizePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     professionTools<T extends Tool$professionToolsArgs<ExtArgs> = {}>(args?: Subset<T, Tool$professionToolsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfessionToolPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     orderProducts<T extends Tool$orderProductsArgs<ExtArgs> = {}>(args?: Subset<T, Tool$orderProductsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrderProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -12498,7 +12498,7 @@ export namespace Prisma {
     readonly quantity: FieldRef<"Tool", 'Int'>
     readonly code: FieldRef<"Tool", 'String'>
     readonly brandId: FieldRef<"Tool", 'String'>
-    readonly powerId: FieldRef<"Tool", 'String'>
+    readonly capacityId: FieldRef<"Tool", 'String'>
     readonly sizeId: FieldRef<"Tool", 'String'>
     readonly img: FieldRef<"Tool", 'String'>
     readonly isAvailable: FieldRef<"Tool", 'Boolean'>
@@ -12919,22 +12919,22 @@ export namespace Prisma {
   }
 
   /**
-   * Tool.power
+   * Tool.capacity
    */
-  export type Tool$powerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Tool$capacityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Power
+     * Select specific fields to fetch from the Capacity
      */
-    select?: PowerSelect<ExtArgs> | null
+    select?: CapacitySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Power
+     * Omit specific fields from the Capacity
      */
-    omit?: PowerOmit<ExtArgs> | null
+    omit?: CapacityOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PowerInclude<ExtArgs> | null
-    where?: PowerWhereInput
+    include?: CapacityInclude<ExtArgs> | null
+    where?: CapacityWhereInput
   }
 
   /**
@@ -32630,7 +32630,7 @@ export namespace Prisma {
   export type SizeScalarFieldEnum = (typeof SizeScalarFieldEnum)[keyof typeof SizeScalarFieldEnum]
 
 
-  export const PowerScalarFieldEnum: {
+  export const CapacityScalarFieldEnum: {
     id: 'id',
     nameUz: 'nameUz',
     nameRu: 'nameRu',
@@ -32639,7 +32639,7 @@ export namespace Prisma {
     updatedAt: 'updatedAt'
   };
 
-  export type PowerScalarFieldEnum = (typeof PowerScalarFieldEnum)[keyof typeof PowerScalarFieldEnum]
+  export type CapacityScalarFieldEnum = (typeof CapacityScalarFieldEnum)[keyof typeof CapacityScalarFieldEnum]
 
 
   export const ToolScalarFieldEnum: {
@@ -32654,7 +32654,7 @@ export namespace Prisma {
     quantity: 'quantity',
     code: 'code',
     brandId: 'brandId',
-    powerId: 'powerId',
+    capacityId: 'capacityId',
     sizeId: 'sizeId',
     img: 'img',
     isAvailable: 'isAvailable',
@@ -33605,20 +33605,20 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Size"> | Date | string
   }
 
-  export type PowerWhereInput = {
-    AND?: PowerWhereInput | PowerWhereInput[]
-    OR?: PowerWhereInput[]
-    NOT?: PowerWhereInput | PowerWhereInput[]
-    id?: StringFilter<"Power"> | string
-    nameUz?: StringFilter<"Power"> | string
-    nameRu?: StringNullableFilter<"Power"> | string | null
-    nameEn?: StringNullableFilter<"Power"> | string | null
-    createdAt?: DateTimeFilter<"Power"> | Date | string
-    updatedAt?: DateTimeFilter<"Power"> | Date | string
+  export type CapacityWhereInput = {
+    AND?: CapacityWhereInput | CapacityWhereInput[]
+    OR?: CapacityWhereInput[]
+    NOT?: CapacityWhereInput | CapacityWhereInput[]
+    id?: StringFilter<"Capacity"> | string
+    nameUz?: StringFilter<"Capacity"> | string
+    nameRu?: StringNullableFilter<"Capacity"> | string | null
+    nameEn?: StringNullableFilter<"Capacity"> | string | null
+    createdAt?: DateTimeFilter<"Capacity"> | Date | string
+    updatedAt?: DateTimeFilter<"Capacity"> | Date | string
     tools?: ToolListRelationFilter
   }
 
-  export type PowerOrderByWithRelationInput = {
+  export type CapacityOrderByWithRelationInput = {
     id?: SortOrder
     nameUz?: SortOrder
     nameRu?: SortOrderInput | SortOrder
@@ -33628,41 +33628,41 @@ export namespace Prisma {
     tools?: ToolOrderByRelationAggregateInput
   }
 
-  export type PowerWhereUniqueInput = Prisma.AtLeast<{
+  export type CapacityWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: PowerWhereInput | PowerWhereInput[]
-    OR?: PowerWhereInput[]
-    NOT?: PowerWhereInput | PowerWhereInput[]
-    nameUz?: StringFilter<"Power"> | string
-    nameRu?: StringNullableFilter<"Power"> | string | null
-    nameEn?: StringNullableFilter<"Power"> | string | null
-    createdAt?: DateTimeFilter<"Power"> | Date | string
-    updatedAt?: DateTimeFilter<"Power"> | Date | string
+    AND?: CapacityWhereInput | CapacityWhereInput[]
+    OR?: CapacityWhereInput[]
+    NOT?: CapacityWhereInput | CapacityWhereInput[]
+    nameUz?: StringFilter<"Capacity"> | string
+    nameRu?: StringNullableFilter<"Capacity"> | string | null
+    nameEn?: StringNullableFilter<"Capacity"> | string | null
+    createdAt?: DateTimeFilter<"Capacity"> | Date | string
+    updatedAt?: DateTimeFilter<"Capacity"> | Date | string
     tools?: ToolListRelationFilter
   }, "id">
 
-  export type PowerOrderByWithAggregationInput = {
+  export type CapacityOrderByWithAggregationInput = {
     id?: SortOrder
     nameUz?: SortOrder
     nameRu?: SortOrderInput | SortOrder
     nameEn?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: PowerCountOrderByAggregateInput
-    _max?: PowerMaxOrderByAggregateInput
-    _min?: PowerMinOrderByAggregateInput
+    _count?: CapacityCountOrderByAggregateInput
+    _max?: CapacityMaxOrderByAggregateInput
+    _min?: CapacityMinOrderByAggregateInput
   }
 
-  export type PowerScalarWhereWithAggregatesInput = {
-    AND?: PowerScalarWhereWithAggregatesInput | PowerScalarWhereWithAggregatesInput[]
-    OR?: PowerScalarWhereWithAggregatesInput[]
-    NOT?: PowerScalarWhereWithAggregatesInput | PowerScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Power"> | string
-    nameUz?: StringWithAggregatesFilter<"Power"> | string
-    nameRu?: StringNullableWithAggregatesFilter<"Power"> | string | null
-    nameEn?: StringNullableWithAggregatesFilter<"Power"> | string | null
-    createdAt?: DateTimeWithAggregatesFilter<"Power"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Power"> | Date | string
+  export type CapacityScalarWhereWithAggregatesInput = {
+    AND?: CapacityScalarWhereWithAggregatesInput | CapacityScalarWhereWithAggregatesInput[]
+    OR?: CapacityScalarWhereWithAggregatesInput[]
+    NOT?: CapacityScalarWhereWithAggregatesInput | CapacityScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Capacity"> | string
+    nameUz?: StringWithAggregatesFilter<"Capacity"> | string
+    nameRu?: StringNullableWithAggregatesFilter<"Capacity"> | string | null
+    nameEn?: StringNullableWithAggregatesFilter<"Capacity"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Capacity"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Capacity"> | Date | string
   }
 
   export type ToolWhereInput = {
@@ -33680,14 +33680,14 @@ export namespace Prisma {
     quantity?: IntFilter<"Tool"> | number
     code?: StringFilter<"Tool"> | string
     brandId?: StringNullableFilter<"Tool"> | string | null
-    powerId?: StringNullableFilter<"Tool"> | string | null
+    capacityId?: StringNullableFilter<"Tool"> | string | null
     sizeId?: StringNullableFilter<"Tool"> | string | null
     img?: StringFilter<"Tool"> | string
     isAvailable?: BoolFilter<"Tool"> | boolean
     createdAt?: DateTimeFilter<"Tool"> | Date | string
     updatedAt?: DateTimeFilter<"Tool"> | Date | string
     brand?: XOR<BrandNullableScalarRelationFilter, BrandWhereInput> | null
-    power?: XOR<PowerNullableScalarRelationFilter, PowerWhereInput> | null
+    capacity?: XOR<CapacityNullableScalarRelationFilter, CapacityWhereInput> | null
     size?: XOR<SizeNullableScalarRelationFilter, SizeWhereInput> | null
     professionTools?: ProfessionToolListRelationFilter
     orderProducts?: OrderProductListRelationFilter
@@ -33706,14 +33706,14 @@ export namespace Prisma {
     quantity?: SortOrder
     code?: SortOrder
     brandId?: SortOrderInput | SortOrder
-    powerId?: SortOrderInput | SortOrder
+    capacityId?: SortOrderInput | SortOrder
     sizeId?: SortOrderInput | SortOrder
     img?: SortOrder
     isAvailable?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     brand?: BrandOrderByWithRelationInput
-    power?: PowerOrderByWithRelationInput
+    capacity?: CapacityOrderByWithRelationInput
     size?: SizeOrderByWithRelationInput
     professionTools?: ProfessionToolOrderByRelationAggregateInput
     orderProducts?: OrderProductOrderByRelationAggregateInput
@@ -33735,14 +33735,14 @@ export namespace Prisma {
     price?: DecimalFilter<"Tool"> | Decimal | DecimalJsLike | number | string
     quantity?: IntFilter<"Tool"> | number
     brandId?: StringNullableFilter<"Tool"> | string | null
-    powerId?: StringNullableFilter<"Tool"> | string | null
+    capacityId?: StringNullableFilter<"Tool"> | string | null
     sizeId?: StringNullableFilter<"Tool"> | string | null
     img?: StringFilter<"Tool"> | string
     isAvailable?: BoolFilter<"Tool"> | boolean
     createdAt?: DateTimeFilter<"Tool"> | Date | string
     updatedAt?: DateTimeFilter<"Tool"> | Date | string
     brand?: XOR<BrandNullableScalarRelationFilter, BrandWhereInput> | null
-    power?: XOR<PowerNullableScalarRelationFilter, PowerWhereInput> | null
+    capacity?: XOR<CapacityNullableScalarRelationFilter, CapacityWhereInput> | null
     size?: XOR<SizeNullableScalarRelationFilter, SizeWhereInput> | null
     professionTools?: ProfessionToolListRelationFilter
     orderProducts?: OrderProductListRelationFilter
@@ -33761,7 +33761,7 @@ export namespace Prisma {
     quantity?: SortOrder
     code?: SortOrder
     brandId?: SortOrderInput | SortOrder
-    powerId?: SortOrderInput | SortOrder
+    capacityId?: SortOrderInput | SortOrder
     sizeId?: SortOrderInput | SortOrder
     img?: SortOrder
     isAvailable?: SortOrder
@@ -33789,7 +33789,7 @@ export namespace Prisma {
     quantity?: IntWithAggregatesFilter<"Tool"> | number
     code?: StringWithAggregatesFilter<"Tool"> | string
     brandId?: StringNullableWithAggregatesFilter<"Tool"> | string | null
-    powerId?: StringNullableWithAggregatesFilter<"Tool"> | string | null
+    capacityId?: StringNullableWithAggregatesFilter<"Tool"> | string | null
     sizeId?: StringNullableWithAggregatesFilter<"Tool"> | string | null
     img?: StringWithAggregatesFilter<"Tool"> | string
     isAvailable?: BoolWithAggregatesFilter<"Tool"> | boolean
@@ -35675,47 +35675,47 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PowerCreateInput = {
+  export type CapacityCreateInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
     nameEn?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    tools?: ToolCreateNestedManyWithoutPowerInput
+    tools?: ToolCreateNestedManyWithoutCapacityInput
   }
 
-  export type PowerUncheckedCreateInput = {
+  export type CapacityUncheckedCreateInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
     nameEn?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    tools?: ToolUncheckedCreateNestedManyWithoutPowerInput
+    tools?: ToolUncheckedCreateNestedManyWithoutCapacityInput
   }
 
-  export type PowerUpdateInput = {
+  export type CapacityUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
     nameEn?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    tools?: ToolUpdateManyWithoutPowerNestedInput
+    tools?: ToolUpdateManyWithoutCapacityNestedInput
   }
 
-  export type PowerUncheckedUpdateInput = {
+  export type CapacityUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
     nameEn?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    tools?: ToolUncheckedUpdateManyWithoutPowerNestedInput
+    tools?: ToolUncheckedUpdateManyWithoutCapacityNestedInput
   }
 
-  export type PowerCreateManyInput = {
+  export type CapacityCreateManyInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -35724,7 +35724,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type PowerUpdateManyMutationInput = {
+  export type CapacityUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35733,7 +35733,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PowerUncheckedUpdateManyInput = {
+  export type CapacityUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -35758,7 +35758,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     brand?: BrandCreateNestedOneWithoutToolsInput
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     size?: SizeCreateNestedOneWithoutToolsInput
     professionTools?: ProfessionToolCreateNestedManyWithoutToolInput
     orderProducts?: OrderProductCreateNestedManyWithoutToolInput
@@ -35777,7 +35777,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -35804,7 +35804,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneWithoutToolsNestedInput
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     size?: SizeUpdateOneWithoutToolsNestedInput
     professionTools?: ProfessionToolUpdateManyWithoutToolNestedInput
     orderProducts?: OrderProductUpdateManyWithoutToolNestedInput
@@ -35823,7 +35823,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -35846,7 +35846,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -35883,7 +35883,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -37769,7 +37769,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type PowerCountOrderByAggregateInput = {
+  export type CapacityCountOrderByAggregateInput = {
     id?: SortOrder
     nameUz?: SortOrder
     nameRu?: SortOrder
@@ -37778,7 +37778,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type PowerMaxOrderByAggregateInput = {
+  export type CapacityMaxOrderByAggregateInput = {
     id?: SortOrder
     nameUz?: SortOrder
     nameRu?: SortOrder
@@ -37787,7 +37787,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type PowerMinOrderByAggregateInput = {
+  export type CapacityMinOrderByAggregateInput = {
     id?: SortOrder
     nameUz?: SortOrder
     nameRu?: SortOrder
@@ -37828,9 +37828,9 @@ export namespace Prisma {
     isNot?: BrandWhereInput | null
   }
 
-  export type PowerNullableScalarRelationFilter = {
-    is?: PowerWhereInput | null
-    isNot?: PowerWhereInput | null
+  export type CapacityNullableScalarRelationFilter = {
+    is?: CapacityWhereInput | null
+    isNot?: CapacityWhereInput | null
   }
 
   export type SizeNullableScalarRelationFilter = {
@@ -37870,7 +37870,7 @@ export namespace Prisma {
     quantity?: SortOrder
     code?: SortOrder
     brandId?: SortOrder
-    powerId?: SortOrder
+    capacityId?: SortOrder
     sizeId?: SortOrder
     img?: SortOrder
     isAvailable?: SortOrder
@@ -37895,7 +37895,7 @@ export namespace Prisma {
     quantity?: SortOrder
     code?: SortOrder
     brandId?: SortOrder
-    powerId?: SortOrder
+    capacityId?: SortOrder
     sizeId?: SortOrder
     img?: SortOrder
     isAvailable?: SortOrder
@@ -37915,7 +37915,7 @@ export namespace Prisma {
     quantity?: SortOrder
     code?: SortOrder
     brandId?: SortOrder
-    powerId?: SortOrder
+    capacityId?: SortOrder
     sizeId?: SortOrder
     img?: SortOrder
     isAvailable?: SortOrder
@@ -39348,45 +39348,45 @@ export namespace Prisma {
     deleteMany?: ToolScalarWhereInput | ToolScalarWhereInput[]
   }
 
-  export type ToolCreateNestedManyWithoutPowerInput = {
-    create?: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput> | ToolCreateWithoutPowerInput[] | ToolUncheckedCreateWithoutPowerInput[]
-    connectOrCreate?: ToolCreateOrConnectWithoutPowerInput | ToolCreateOrConnectWithoutPowerInput[]
-    createMany?: ToolCreateManyPowerInputEnvelope
+  export type ToolCreateNestedManyWithoutCapacityInput = {
+    create?: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput> | ToolCreateWithoutCapacityInput[] | ToolUncheckedCreateWithoutCapacityInput[]
+    connectOrCreate?: ToolCreateOrConnectWithoutCapacityInput | ToolCreateOrConnectWithoutCapacityInput[]
+    createMany?: ToolCreateManyCapacityInputEnvelope
     connect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
   }
 
-  export type ToolUncheckedCreateNestedManyWithoutPowerInput = {
-    create?: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput> | ToolCreateWithoutPowerInput[] | ToolUncheckedCreateWithoutPowerInput[]
-    connectOrCreate?: ToolCreateOrConnectWithoutPowerInput | ToolCreateOrConnectWithoutPowerInput[]
-    createMany?: ToolCreateManyPowerInputEnvelope
+  export type ToolUncheckedCreateNestedManyWithoutCapacityInput = {
+    create?: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput> | ToolCreateWithoutCapacityInput[] | ToolUncheckedCreateWithoutCapacityInput[]
+    connectOrCreate?: ToolCreateOrConnectWithoutCapacityInput | ToolCreateOrConnectWithoutCapacityInput[]
+    createMany?: ToolCreateManyCapacityInputEnvelope
     connect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
   }
 
-  export type ToolUpdateManyWithoutPowerNestedInput = {
-    create?: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput> | ToolCreateWithoutPowerInput[] | ToolUncheckedCreateWithoutPowerInput[]
-    connectOrCreate?: ToolCreateOrConnectWithoutPowerInput | ToolCreateOrConnectWithoutPowerInput[]
-    upsert?: ToolUpsertWithWhereUniqueWithoutPowerInput | ToolUpsertWithWhereUniqueWithoutPowerInput[]
-    createMany?: ToolCreateManyPowerInputEnvelope
+  export type ToolUpdateManyWithoutCapacityNestedInput = {
+    create?: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput> | ToolCreateWithoutCapacityInput[] | ToolUncheckedCreateWithoutCapacityInput[]
+    connectOrCreate?: ToolCreateOrConnectWithoutCapacityInput | ToolCreateOrConnectWithoutCapacityInput[]
+    upsert?: ToolUpsertWithWhereUniqueWithoutCapacityInput | ToolUpsertWithWhereUniqueWithoutCapacityInput[]
+    createMany?: ToolCreateManyCapacityInputEnvelope
     set?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     disconnect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     delete?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     connect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
-    update?: ToolUpdateWithWhereUniqueWithoutPowerInput | ToolUpdateWithWhereUniqueWithoutPowerInput[]
-    updateMany?: ToolUpdateManyWithWhereWithoutPowerInput | ToolUpdateManyWithWhereWithoutPowerInput[]
+    update?: ToolUpdateWithWhereUniqueWithoutCapacityInput | ToolUpdateWithWhereUniqueWithoutCapacityInput[]
+    updateMany?: ToolUpdateManyWithWhereWithoutCapacityInput | ToolUpdateManyWithWhereWithoutCapacityInput[]
     deleteMany?: ToolScalarWhereInput | ToolScalarWhereInput[]
   }
 
-  export type ToolUncheckedUpdateManyWithoutPowerNestedInput = {
-    create?: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput> | ToolCreateWithoutPowerInput[] | ToolUncheckedCreateWithoutPowerInput[]
-    connectOrCreate?: ToolCreateOrConnectWithoutPowerInput | ToolCreateOrConnectWithoutPowerInput[]
-    upsert?: ToolUpsertWithWhereUniqueWithoutPowerInput | ToolUpsertWithWhereUniqueWithoutPowerInput[]
-    createMany?: ToolCreateManyPowerInputEnvelope
+  export type ToolUncheckedUpdateManyWithoutCapacityNestedInput = {
+    create?: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput> | ToolCreateWithoutCapacityInput[] | ToolUncheckedCreateWithoutCapacityInput[]
+    connectOrCreate?: ToolCreateOrConnectWithoutCapacityInput | ToolCreateOrConnectWithoutCapacityInput[]
+    upsert?: ToolUpsertWithWhereUniqueWithoutCapacityInput | ToolUpsertWithWhereUniqueWithoutCapacityInput[]
+    createMany?: ToolCreateManyCapacityInputEnvelope
     set?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     disconnect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     delete?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
     connect?: ToolWhereUniqueInput | ToolWhereUniqueInput[]
-    update?: ToolUpdateWithWhereUniqueWithoutPowerInput | ToolUpdateWithWhereUniqueWithoutPowerInput[]
-    updateMany?: ToolUpdateManyWithWhereWithoutPowerInput | ToolUpdateManyWithWhereWithoutPowerInput[]
+    update?: ToolUpdateWithWhereUniqueWithoutCapacityInput | ToolUpdateWithWhereUniqueWithoutCapacityInput[]
+    updateMany?: ToolUpdateManyWithWhereWithoutCapacityInput | ToolUpdateManyWithWhereWithoutCapacityInput[]
     deleteMany?: ToolScalarWhereInput | ToolScalarWhereInput[]
   }
 
@@ -39396,10 +39396,10 @@ export namespace Prisma {
     connect?: BrandWhereUniqueInput
   }
 
-  export type PowerCreateNestedOneWithoutToolsInput = {
-    create?: XOR<PowerCreateWithoutToolsInput, PowerUncheckedCreateWithoutToolsInput>
-    connectOrCreate?: PowerCreateOrConnectWithoutToolsInput
-    connect?: PowerWhereUniqueInput
+  export type CapacityCreateNestedOneWithoutToolsInput = {
+    create?: XOR<CapacityCreateWithoutToolsInput, CapacityUncheckedCreateWithoutToolsInput>
+    connectOrCreate?: CapacityCreateOrConnectWithoutToolsInput
+    connect?: CapacityWhereUniqueInput
   }
 
   export type SizeCreateNestedOneWithoutToolsInput = {
@@ -39480,14 +39480,14 @@ export namespace Prisma {
     update?: XOR<XOR<BrandUpdateToOneWithWhereWithoutToolsInput, BrandUpdateWithoutToolsInput>, BrandUncheckedUpdateWithoutToolsInput>
   }
 
-  export type PowerUpdateOneWithoutToolsNestedInput = {
-    create?: XOR<PowerCreateWithoutToolsInput, PowerUncheckedCreateWithoutToolsInput>
-    connectOrCreate?: PowerCreateOrConnectWithoutToolsInput
-    upsert?: PowerUpsertWithoutToolsInput
-    disconnect?: PowerWhereInput | boolean
-    delete?: PowerWhereInput | boolean
-    connect?: PowerWhereUniqueInput
-    update?: XOR<XOR<PowerUpdateToOneWithWhereWithoutToolsInput, PowerUpdateWithoutToolsInput>, PowerUncheckedUpdateWithoutToolsInput>
+  export type CapacityUpdateOneWithoutToolsNestedInput = {
+    create?: XOR<CapacityCreateWithoutToolsInput, CapacityUncheckedCreateWithoutToolsInput>
+    connectOrCreate?: CapacityCreateOrConnectWithoutToolsInput
+    upsert?: CapacityUpsertWithoutToolsInput
+    disconnect?: CapacityWhereInput | boolean
+    delete?: CapacityWhereInput | boolean
+    connect?: CapacityWhereUniqueInput
+    update?: XOR<XOR<CapacityUpdateToOneWithWhereWithoutToolsInput, CapacityUpdateWithoutToolsInput>, CapacityUncheckedUpdateWithoutToolsInput>
   }
 
   export type SizeUpdateOneWithoutToolsNestedInput = {
@@ -41748,7 +41748,7 @@ export namespace Prisma {
     isAvailable?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     size?: SizeCreateNestedOneWithoutToolsInput
     professionTools?: ProfessionToolCreateNestedManyWithoutToolInput
     orderProducts?: OrderProductCreateNestedManyWithoutToolInput
@@ -41766,7 +41766,7 @@ export namespace Prisma {
     price: Decimal | DecimalJsLike | number | string
     quantity: number
     code: string
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -41818,7 +41818,7 @@ export namespace Prisma {
     quantity?: IntFilter<"Tool"> | number
     code?: StringFilter<"Tool"> | string
     brandId?: StringNullableFilter<"Tool"> | string | null
-    powerId?: StringNullableFilter<"Tool"> | string | null
+    capacityId?: StringNullableFilter<"Tool"> | string | null
     sizeId?: StringNullableFilter<"Tool"> | string | null
     img?: StringFilter<"Tool"> | string
     isAvailable?: BoolFilter<"Tool"> | boolean
@@ -41842,7 +41842,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     brand?: BrandCreateNestedOneWithoutToolsInput
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     professionTools?: ProfessionToolCreateNestedManyWithoutToolInput
     orderProducts?: OrderProductCreateNestedManyWithoutToolInput
     basket?: BasketCreateNestedManyWithoutToolInput
@@ -41860,7 +41860,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     img: string
     isAvailable?: boolean
     createdAt?: Date | string
@@ -41896,7 +41896,7 @@ export namespace Prisma {
     data: XOR<ToolUpdateManyMutationInput, ToolUncheckedUpdateManyWithoutSizeInput>
   }
 
-  export type ToolCreateWithoutPowerInput = {
+  export type ToolCreateWithoutCapacityInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -41918,7 +41918,7 @@ export namespace Prisma {
     basket?: BasketCreateNestedManyWithoutToolInput
   }
 
-  export type ToolUncheckedCreateWithoutPowerInput = {
+  export type ToolUncheckedCreateWithoutCapacityInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -41940,30 +41940,30 @@ export namespace Prisma {
     basket?: BasketUncheckedCreateNestedManyWithoutToolInput
   }
 
-  export type ToolCreateOrConnectWithoutPowerInput = {
+  export type ToolCreateOrConnectWithoutCapacityInput = {
     where: ToolWhereUniqueInput
-    create: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput>
+    create: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput>
   }
 
-  export type ToolCreateManyPowerInputEnvelope = {
-    data: ToolCreateManyPowerInput | ToolCreateManyPowerInput[]
+  export type ToolCreateManyCapacityInputEnvelope = {
+    data: ToolCreateManyCapacityInput | ToolCreateManyCapacityInput[]
     skipDuplicates?: boolean
   }
 
-  export type ToolUpsertWithWhereUniqueWithoutPowerInput = {
+  export type ToolUpsertWithWhereUniqueWithoutCapacityInput = {
     where: ToolWhereUniqueInput
-    update: XOR<ToolUpdateWithoutPowerInput, ToolUncheckedUpdateWithoutPowerInput>
-    create: XOR<ToolCreateWithoutPowerInput, ToolUncheckedCreateWithoutPowerInput>
+    update: XOR<ToolUpdateWithoutCapacityInput, ToolUncheckedUpdateWithoutCapacityInput>
+    create: XOR<ToolCreateWithoutCapacityInput, ToolUncheckedCreateWithoutCapacityInput>
   }
 
-  export type ToolUpdateWithWhereUniqueWithoutPowerInput = {
+  export type ToolUpdateWithWhereUniqueWithoutCapacityInput = {
     where: ToolWhereUniqueInput
-    data: XOR<ToolUpdateWithoutPowerInput, ToolUncheckedUpdateWithoutPowerInput>
+    data: XOR<ToolUpdateWithoutCapacityInput, ToolUncheckedUpdateWithoutCapacityInput>
   }
 
-  export type ToolUpdateManyWithWhereWithoutPowerInput = {
+  export type ToolUpdateManyWithWhereWithoutCapacityInput = {
     where: ToolScalarWhereInput
-    data: XOR<ToolUpdateManyMutationInput, ToolUncheckedUpdateManyWithoutPowerInput>
+    data: XOR<ToolUpdateManyMutationInput, ToolUncheckedUpdateManyWithoutCapacityInput>
   }
 
   export type BrandCreateWithoutToolsInput = {
@@ -41989,7 +41989,7 @@ export namespace Prisma {
     create: XOR<BrandCreateWithoutToolsInput, BrandUncheckedCreateWithoutToolsInput>
   }
 
-  export type PowerCreateWithoutToolsInput = {
+  export type CapacityCreateWithoutToolsInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -41998,7 +41998,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type PowerUncheckedCreateWithoutToolsInput = {
+  export type CapacityUncheckedCreateWithoutToolsInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -42007,9 +42007,9 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type PowerCreateOrConnectWithoutToolsInput = {
-    where: PowerWhereUniqueInput
-    create: XOR<PowerCreateWithoutToolsInput, PowerUncheckedCreateWithoutToolsInput>
+  export type CapacityCreateOrConnectWithoutToolsInput = {
+    where: CapacityWhereUniqueInput
+    create: XOR<CapacityCreateWithoutToolsInput, CapacityUncheckedCreateWithoutToolsInput>
   }
 
   export type SizeCreateWithoutToolsInput = {
@@ -42160,18 +42160,18 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PowerUpsertWithoutToolsInput = {
-    update: XOR<PowerUpdateWithoutToolsInput, PowerUncheckedUpdateWithoutToolsInput>
-    create: XOR<PowerCreateWithoutToolsInput, PowerUncheckedCreateWithoutToolsInput>
-    where?: PowerWhereInput
+  export type CapacityUpsertWithoutToolsInput = {
+    update: XOR<CapacityUpdateWithoutToolsInput, CapacityUncheckedUpdateWithoutToolsInput>
+    create: XOR<CapacityCreateWithoutToolsInput, CapacityUncheckedCreateWithoutToolsInput>
+    where?: CapacityWhereInput
   }
 
-  export type PowerUpdateToOneWithWhereWithoutToolsInput = {
-    where?: PowerWhereInput
-    data: XOR<PowerUpdateWithoutToolsInput, PowerUncheckedUpdateWithoutToolsInput>
+  export type CapacityUpdateToOneWithWhereWithoutToolsInput = {
+    where?: CapacityWhereInput
+    data: XOR<CapacityUpdateWithoutToolsInput, CapacityUncheckedUpdateWithoutToolsInput>
   }
 
-  export type PowerUpdateWithoutToolsInput = {
+  export type CapacityUpdateWithoutToolsInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -42180,7 +42180,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PowerUncheckedUpdateWithoutToolsInput = {
+  export type CapacityUncheckedUpdateWithoutToolsInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -43318,7 +43318,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     brand?: BrandCreateNestedOneWithoutToolsInput
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     size?: SizeCreateNestedOneWithoutToolsInput
     orderProducts?: OrderProductCreateNestedManyWithoutToolInput
     basket?: BasketCreateNestedManyWithoutToolInput
@@ -43336,7 +43336,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -43419,7 +43419,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneWithoutToolsNestedInput
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     size?: SizeUpdateOneWithoutToolsNestedInput
     orderProducts?: OrderProductUpdateManyWithoutToolNestedInput
     basket?: BasketUpdateManyWithoutToolNestedInput
@@ -43437,7 +43437,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -43765,7 +43765,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     brand?: BrandCreateNestedOneWithoutToolsInput
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     size?: SizeCreateNestedOneWithoutToolsInput
     professionTools?: ProfessionToolCreateNestedManyWithoutToolInput
     basket?: BasketCreateNestedManyWithoutToolInput
@@ -43783,7 +43783,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -43944,7 +43944,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneWithoutToolsNestedInput
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     size?: SizeUpdateOneWithoutToolsNestedInput
     professionTools?: ProfessionToolUpdateManyWithoutToolNestedInput
     basket?: BasketUpdateManyWithoutToolNestedInput
@@ -43962,7 +43962,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -44273,7 +44273,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     brand?: BrandCreateNestedOneWithoutToolsInput
-    power?: PowerCreateNestedOneWithoutToolsInput
+    capacity?: CapacityCreateNestedOneWithoutToolsInput
     size?: SizeCreateNestedOneWithoutToolsInput
     professionTools?: ProfessionToolCreateNestedManyWithoutToolInput
     orderProducts?: OrderProductCreateNestedManyWithoutToolInput
@@ -44291,7 +44291,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -44452,7 +44452,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneWithoutToolsNestedInput
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     size?: SizeUpdateOneWithoutToolsNestedInput
     professionTools?: ProfessionToolUpdateManyWithoutToolNestedInput
     orderProducts?: OrderProductUpdateManyWithoutToolNestedInput
@@ -44470,7 +44470,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -45364,7 +45364,7 @@ export namespace Prisma {
     price: Decimal | DecimalJsLike | number | string
     quantity: number
     code: string
-    powerId?: string | null
+    capacityId?: string | null
     sizeId?: string | null
     img: string
     isAvailable?: boolean
@@ -45387,7 +45387,7 @@ export namespace Prisma {
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     size?: SizeUpdateOneWithoutToolsNestedInput
     professionTools?: ProfessionToolUpdateManyWithoutToolNestedInput
     orderProducts?: OrderProductUpdateManyWithoutToolNestedInput
@@ -45405,7 +45405,7 @@ export namespace Prisma {
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -45427,7 +45427,7 @@ export namespace Prisma {
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     sizeId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
@@ -45447,7 +45447,7 @@ export namespace Prisma {
     quantity: number
     code: string
     brandId?: string | null
-    powerId?: string | null
+    capacityId?: string | null
     img: string
     isAvailable?: boolean
     createdAt?: Date | string
@@ -45470,7 +45470,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: BrandUpdateOneWithoutToolsNestedInput
-    power?: PowerUpdateOneWithoutToolsNestedInput
+    capacity?: CapacityUpdateOneWithoutToolsNestedInput
     professionTools?: ProfessionToolUpdateManyWithoutToolNestedInput
     orderProducts?: OrderProductUpdateManyWithoutToolNestedInput
     basket?: BasketUpdateManyWithoutToolNestedInput
@@ -45488,7 +45488,7 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45510,14 +45510,14 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     brandId?: NullableStringFieldUpdateOperationsInput | string | null
-    powerId?: NullableStringFieldUpdateOperationsInput | string | null
+    capacityId?: NullableStringFieldUpdateOperationsInput | string | null
     img?: StringFieldUpdateOperationsInput | string
     isAvailable?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ToolCreateManyPowerInput = {
+  export type ToolCreateManyCapacityInput = {
     id?: string
     nameUz: string
     nameRu?: string | null
@@ -45536,7 +45536,7 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
-  export type ToolUpdateWithoutPowerInput = {
+  export type ToolUpdateWithoutCapacityInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -45558,7 +45558,7 @@ export namespace Prisma {
     basket?: BasketUpdateManyWithoutToolNestedInput
   }
 
-  export type ToolUncheckedUpdateWithoutPowerInput = {
+  export type ToolUncheckedUpdateWithoutCapacityInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null
@@ -45580,7 +45580,7 @@ export namespace Prisma {
     basket?: BasketUncheckedUpdateManyWithoutToolNestedInput
   }
 
-  export type ToolUncheckedUpdateManyWithoutPowerInput = {
+  export type ToolUncheckedUpdateManyWithoutCapacityInput = {
     id?: StringFieldUpdateOperationsInput | string
     nameUz?: StringFieldUpdateOperationsInput | string
     nameRu?: NullableStringFieldUpdateOperationsInput | string | null

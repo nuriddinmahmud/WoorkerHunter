@@ -195,7 +195,7 @@ exports.Prisma.SizeScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
-exports.Prisma.PowerScalarFieldEnum = {
+exports.Prisma.CapacityScalarFieldEnum = {
   id: 'id',
   nameUz: 'nameUz',
   nameRu: 'nameRu',
@@ -216,7 +216,7 @@ exports.Prisma.ToolScalarFieldEnum = {
   quantity: 'quantity',
   code: 'code',
   brandId: 'brandId',
-  powerId: 'powerId',
+  capacityId: 'capacityId',
   sizeId: 'sizeId',
   img: 'img',
   isAvailable: 'isAvailable',
@@ -486,7 +486,7 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   Brand: 'Brand',
   Size: 'Size',
-  Power: 'Power',
+  Capacity: 'Capacity',
   Tool: 'Tool',
   Master: 'Master',
   MasterProfession: 'MasterProfession',

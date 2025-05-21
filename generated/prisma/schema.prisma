@@ -138,7 +138,7 @@ model Size {
   tools     Tool[]
 }
 
-model Power {
+model Capacity {
   id        String   @id @default(uuid())
   nameUz    String
   nameRu    String?
@@ -160,7 +160,7 @@ model Tool {
   quantity      Int
   code          String   @unique
   brandId       String?
-  powerId       String?
+  capacityId    String?
   sizeId        String?
   img           String
   isAvailable   Boolean  @default(true)
@@ -168,7 +168,7 @@ model Tool {
   updatedAt     DateTime @updatedAt
 
   brand           Brand?           @relation(fields: [brandId], references: [id], onDelete: SetNull)
-  power           Power?           @relation(fields: [powerId], references: [id], onDelete: SetNull)
+  capacity        Capacity?        @relation(fields: [capacityId], references: [id], onDelete: SetNull)
   size            Size?            @relation(fields: [sizeId], references: [id], onDelete: SetNull)
   professionTools ProfessionTool[]
   orderProducts   OrderProduct[]

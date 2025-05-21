@@ -1,26 +1,165 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  HttpException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateCapacityDto } from './dto/create-capacity.dto';
 import { UpdateCapacityDto } from './dto/update-capacity.dto';
 
+import { PrismaService } from 'src/prisma/prisma.service';
+
 @Injectable()
 export class CapacityService {
-  create(createCapacityDto: CreateCapacityDto) {
-    return 'This action adds a new capacity';
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(CreateCapacityDto: CreateCapacityDto) {
+    try {
+      const existing = await this.prisma.capacity.findFirst({
+        where: { nameUz: CreateCapacityDto.nameUz },
+      });
+
+      if (existing) {
+        throw new ConflictException('Capacity with this name already exists!');
+      }
+
+      const data = await this.prisma.capacity.create({
+        data: CreateCapacityDto,
+      });
+
+      return { data };
+    } catch (error) {
+      this.handleError(error);
+    }
   }
 
-  findAll() {
-    return `This action returns all capacity`;
+  async findAll(query?: {
+    page?: number;
+    limit?: number;
+    search?: string;
+    sortBy?: keyof typeof this.prisma.capacity.fields;
+    sortOrder?: 'asc' | 'desc';
+    filter?: { [key: string]: any };
+  }) {
+    try {
+      const {
+        page = 1,
+        limit = 10,
+        search,
+        sortBy = 'createdAt',
+        sortOrder = 'desc',
+        filter = {},
+      } = query || {};
+
+      const where: any = {
+        ...filter,
+      };
+
+      if (search) {
+        where.OR = [
+          { nameUz: { contains: search, mode: 'insensitive' } },
+          { nameRu: { contains: search, mode: 'insensitive' } },
+          { nameEn: { contains: search, mode: 'insensitive' } },
+        ];
+      }
+
+      const data = await this.prisma.capacity.findMany({
+        where,
+        orderBy: { [sortBy]: sortOrder },
+        skip: (page - 1) * limit,
+        take: limit,
+      });
+
+      const total = await this.prisma.capacity.count({ where });
+
+      return {
+        meta: {
+          total,
+          page,
+          lastPage: Math.ceil(total / limit),
+        },
+        data,
+      };
+    } catch (error) {
+      this.handleError(error);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} capacity`;
+  async findOne(id: string) {
+    try {
+      const data = await this.prisma.capacity.findUnique({ where: { id } });
+
+      if (!data) {
+        throw new NotFoundException(
+          "Capacity not found with the provided 'id'!",
+        );
+      }
+
+      return { data };
+    } catch (error) {
+      this.handleError(error);
+    }
   }
 
-  update(id: number, updateCapacityDto: UpdateCapacityDto) {
-    return `This action updates a #${id} capacity`;
+  async update(id: string, updateCapacityDto: UpdateCapacityDto) {
+    try {
+      const existing = await this.prisma.capacity.findUnique({ where: { id } });
+
+      if (!existing) {
+        throw new NotFoundException(
+          "Capacity not found with the provided 'id'!",
+        );
+      }
+
+      if (updateCapacityDto.nameUz) {
+        const duplicate = await this.prisma.capacity.findFirst({
+          where: {
+            nameUz: UpdateCapacityDto.name,
+            NOT: { id },
+          },
+        });
+
+        if (duplicate) {
+          throw new ConflictException(
+            'Another capacity with this name already exists!',
+          );
+        }
+      }
+
+      const data = await this.prisma.capacity.update({
+        where: { id },
+        data: UpdateCapacityDto,
+      });
+
+      return { data };
+    } catch (error) {
+      this.handleError(error);
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} capacity`;
+  async remove(id: string) {
+    try {
+      const existing = await this.prisma.capacity.findUnique({ where: { id } });
+
+      if (!existing) {
+        throw new NotFoundException(
+          "Capacity not found with the provided 'id'!",
+        );
+      }
+
+      const data = await this.prisma.capacity.delete({ where: { id } });
+
+      return { data };
+    } catch (error) {
+      this.handleError(error);
+    }
+  }
+
+  private handleError(error: any): never {
+    if (error instanceof HttpException) {
+      throw error;
+    }
+    throw new BadRequestException(error.message);
   }
 }
