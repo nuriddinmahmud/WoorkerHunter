@@ -7,28 +7,28 @@ import { UpdateTelegramBotDto } from './dto/update-telegram-bot.dto';
 export class TelegramBotController {
   constructor(private readonly telegramBotService: TelegramBotService) {}
 
-  @Post()
-  create(@Body() createTelegramBotDto: CreateTelegramBotDto) {
-    return this.telegramBotService.create(createTelegramBotDto);
-  }
+  // @Post()
+  // create(@Body() createTelegramBotDto: CreateTelegramBotDto) {
+  //   return this.telegramBotService.create(createTelegramBotDto);
+  // }
 
-  @Get()
-  findAll() {
-    return this.telegramBotService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.telegramBotService.findAll();
+  // }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.telegramBotService.findOne(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.telegramBotService.findOne(+id);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTelegramBotDto: UpdateTelegramBotDto) {
-    return this.telegramBotService.update(+id, updateTelegramBotDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateTelegramBotDto: UpdateTelegramBotDto) {
+  //   return this.telegramBotService.update(+id, updateTelegramBotDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.telegramBotService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.telegramBotService.remove(+id);
+  // }
 }

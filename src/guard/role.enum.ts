@@ -1,7 +1,0 @@
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  SUPERADMIN = 'SUPER_ADMIN',
-  VIEWERADMIN = 'VIEWER_ADMIN',
-   USER_FIZ = 'USER_FIZ',
-  USER_YUR = 'USER_YUR',
-}

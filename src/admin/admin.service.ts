@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { AddAdminDto } from './dto/create-admin.dto';
+// import { UserRole } from '@prisma/client';
 import { UserRole } from './dto/create-admin.dto';
 
 import * as bcrypt from 'bcrypt';
@@ -97,6 +98,10 @@ export class AdminService {
       });
 
       const total = await this.prisma.user.count({ where });
+
+      // if (!data.length) {
+      //   throw new NotFoundException('No admins found!');
+      // }
 
       return {
         meta: {

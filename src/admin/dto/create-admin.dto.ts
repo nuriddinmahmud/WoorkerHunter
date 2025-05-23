@@ -1,24 +1,17 @@
 export class CreateAddAdminDto {}
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsNotEmpty,
-  IsString,
-  Matches,
-  MaxLength,
-  MinLength,
-  IsIn,
-} from 'class-validator';
+import { IsNotEmpty, IsString, Matches, MaxLength, MinLength, IsIn } from 'class-validator';
 
 export enum UserRole {
-  ADMIN = 'ADMIN',
-  SUPER_ADMIN = 'SUPER_ADMIN',
-  VIEWER_ADMIN = 'VIEWER_ADMIN',
-  USER_FIZ = 'USER_FIZ',
-  USER_YUR = 'USER_YUR',
+  ADMIN="ADMIN",
+  SUPER_ADMIN="SUPER_ADMIN",  
+  VIEWER_ADMIN="VIEWER_ADMIN",
+  USER_FIZ="USER_FIZ",
+  USER_YUR="USER_YUR",
 }
 
 export class AddAdminDto {
-  @ApiProperty({ example: 'Dilshodbek' })
+  @ApiProperty({ example: "Dilshodbek" })
   @IsString()
   @IsNotEmpty()
   @MinLength(2)
@@ -46,7 +39,7 @@ export class AddAdminDto {
   })
   phoneNumber: string;
 
-  @ApiProperty({ example: 'Secure123!' })
+  @ApiProperty({ example: 'qwerty1@' })
   @IsString()
   @IsNotEmpty()
   @MinLength(5)
@@ -61,10 +54,7 @@ export class AddAdminDto {
   @IsNotEmpty()
   regionId: string;
 
-  @ApiProperty({
-    example: 'ADMIN',
-    enum: ['ADMIN', 'SUPER_ADMIN', 'VIEWER_ADMIN'],
-  })
+  @ApiProperty({ example: 'ADMIN', enum: ['ADMIN', 'SUPER_ADMIN', 'VIEWER_ADMIN'] })
   @IsString()
   @IsNotEmpty()
   @IsIn(['ADMIN', 'SUPER_ADMIN', 'VIEWER_ADMIN'])
