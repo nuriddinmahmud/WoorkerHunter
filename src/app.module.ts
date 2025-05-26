@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { BasketModule } from './basket/basket.module';
 import { BrandModule } from './brand/brand.module';
 import { CapacityModule } from './capacity/capacity.module';
-import { CompanyModule } from './company/company.module';
+// import { CompanyModule } from './company/company.module';
 import { CommentModule } from './comment/comment.module';
 import { ContactModule } from './contact/contact.module';
 import { EskizService } from './eskiz/eskiz.service';
@@ -36,7 +36,7 @@ import { UserModule } from './user/user.module';
     BasketModule,
     BrandModule,
     CapacityModule,
-    CompanyModule,
+    // CompanyModule,
     CommentModule,
     ContactModule,
     FaqModule,
